@@ -4,14 +4,14 @@ from flask import Flask, request
 
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger(__name__)
-APP = Flask("VFC-Site", static_folder='')
+app = Flask("VFC-Site", static_folder='')
 
 
-@APP.route("/")
+@app.route("/")
 def serve_index():
-    return APP.send_static_file('index.html')
+    return app.send_static_file('index.html')
 
 
 
 if __name__ == '__main__':
-    APP.run(host='0.0.0.0', threaded=True, port=5000)
+    app.run(host='0.0.0.0', threaded=True, port=5000)
