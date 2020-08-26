@@ -10,9 +10,17 @@ app = Flask("VFC-Site", static_folder='')
 @app.route("/")
 def serve_index():
     return app.send_static_file('index.html')
-    return app.send_static_file('Signup.html')
-    return app.send_static_file('VFC-Login.html')
 
+
+
+@app.route("/Signup.html")
+def serve_signup():
+    return app.send_static_file('Signup.html')
+
+
+@app.route("/VFC-login.html")
+def serve_login():
+    return app.send_static_file('VFC-login.html')
 
 
 if __name__ == '__main__':
