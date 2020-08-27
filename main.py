@@ -25,8 +25,7 @@ def serve_login():
     if request.method == 'POST':
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid credentials. Please try again.'
-else:
-    return redirect(url_for('serve_index'))
+else: return redirect(url_for('serve_index'))
     return app.send_static_file('login.html', error=error)
 
 
