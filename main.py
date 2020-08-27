@@ -13,12 +13,12 @@ def serve_index():
 
 
 
-@app.route("/Signup.html")
+@app.route("/signup.html")
 def serve_signup():
     return app.send_static_file('Signup.html')
 
 
-@app.route("/VFC-login.html")
+@app.route("/login.html")
 def serve_login():
     return app.send_static_file('VFC-login.html')
 
