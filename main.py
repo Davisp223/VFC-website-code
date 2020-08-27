@@ -27,6 +27,7 @@ def serve_login():
             error = 'Invalid credentials. Please try again.'
         else: 
             return redirect(url_for('serve_index')) 
+        else: 
             return app.send_static_file('login.html', error=error)
     
 
