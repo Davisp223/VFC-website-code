@@ -20,6 +20,7 @@ def serve_signup():
 
 @app.route("/login.html", methods=['GET', 'POST'])
 def serve_login():
+    return app.send_static_file('login.html', error=error)
     error = None
     if request.method == 'POST':
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
