@@ -306,20 +306,23 @@ span.psw {
   <div class="card">
     <div class="center">
       <h1>Welcome Back</h1>
-      <form method="post" action="Connect.php"
+      <form method="post" action=""
       <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="Username" required>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required value="{{request.form.username}}">
   
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="Password" required>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="Password" required value="{{request.form.password}}">
 
-        <button type="button" onclick="location.href='https://virtualfarmingcommunity.com'" class="cancelbtn">Cancel</button> 
-        <button type="login" name="login-submit" class="Loginbtn">Sign Up</button>
+        <button type="button" onclick="location.href='https://www.virtualfarmingcommunity.com/'" class="cancelbtn">Cancel</button> 
+        <button type="submit"  class="btn btn-default" value="Login">login</button>
        
       </div>
       </div>
     </form>
+    {% if error%}
+    <p class="error"><strong>Error:</strong>{{ error }}</p>
+    {% endif %}
          </div>
 
 <script>
