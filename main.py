@@ -15,12 +15,12 @@ def serve_index():
 
 @app.route("/signup.html")
 def serve_signup():
-    return app.send_static_file('Signup.html')
+    return app.send_static_file('signup.html')
 
 
 @app.route("/login.html")
 def serve_login():
-    return app.send_static_file('VFC-login.html')
+    return app.send_static_file('login.html')
 
 
 @app.route("/connect.php")
