@@ -23,8 +23,10 @@ def serve_login():
     return app.send_static_file('login.html', error=error)
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':  else: return redirect(url_for('serve_index')) return app.send_static_file('login.html', error=error)
-            error = 'Invalid credentials. Please try again.'
+    if request.form['username'] != 'admin' or request.form['password'] != 'admin':  
+        error = 'Invalid credentials. Please try again.'
+    else: return redirect(url_for('serve_index')) 
+        return app.send_static_file('login.html', error=error)
     
 
 
