@@ -23,5 +23,15 @@ def serve_login():
     return app.send_static_file('VFC-login.html')
 
 
+@app.route("/connect.php")
+def serve_connect():
+    return app.send_static_file('Connect.php')
+
+
+@app.route("/Signup.php")
+def serve_signup_php():
+    return app.send_static_file('Signup.php')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True, port=5000)
