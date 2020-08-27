@@ -1,6 +1,6 @@
 import logging
 
-from flask import Flask, request, redirect, url_for, request
+from flask import Flask, request
 
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger(__name__)
@@ -18,16 +18,9 @@ def serve_signup():
     return app.send_static_file('signup.html')
 
 
-@app.route("/login.html", methods=['GET', 'POST'])
+@app.route("/login.html")
 def serve_login():
-    return app.send_static_file('login.html', error=error)
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid credentials. Please try again.'
-            else:
-                return redirect(url_for('serve_index'))
-    return app.send_static_file('login.html', error=error)
+    return app.send_static_file('login.html')
 
 
 @app.route("/connect.php")
