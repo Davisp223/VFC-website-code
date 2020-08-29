@@ -2,6 +2,7 @@ import logging
 from django.http import HttpResponse, HttpResponseServerError, HttpResponseRedirect
 from django.template import Context, loader
 
+
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger(__name__)
 
@@ -18,7 +19,7 @@ def signup(request):
 
 def login(request):
     template = loader.get_template("login.html")
-    return HttpResponse(template.render(message="Welcome Back!"))
+    return HttpResponse(template.render({'message': "Welcome Back!"}))
 
 
 def complete_signup(request):
@@ -34,7 +35,6 @@ def complete_signup(request):
     if data['password'] != data['passwordrepeat']: 
         return HttpResponseServerError('Passwords entered do not match!')   
     
-    # Create actual user account here...
-    
-    return HttpResponseRedirect("/login")
+    template = loader.get_template("login.html")
+    return HttpResponse(template.render({'message': "Sign Up Successful! Please Log In"}))
     
