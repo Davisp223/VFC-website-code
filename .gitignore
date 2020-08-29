@@ -2,3 +2,4 @@ env/*pip
 **/*/__pycache__
 *.pyc
 env/**/**
+env
