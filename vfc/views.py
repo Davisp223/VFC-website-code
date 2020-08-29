@@ -22,6 +22,11 @@ def login(request):
     return HttpResponse(template.render({'message': "Welcome Back!"}))
 
 
+def main(request):
+    template = loader.get_template("main.html")
+    return HttpResponse(template.render())
+
+
 def complete_signup(request):
     params = request.body.decode('UTF-8').split("&")
     data = {}
