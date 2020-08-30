@@ -1,6 +1,6 @@
 import logging
 from django.http import HttpResponse, HttpResponseServerError, HttpResponseRedirect
-from django.template import Context, loader
+from django.template import loader
 from django.contrib.auth import authenticate
 
 from .models import User
