@@ -25,7 +25,11 @@ SECRET_KEY = 'x08^_4b$n-#e@8ny%g&qu%5pm7n+r-fzrs4joi7ia96vja49ft'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "farm-sim-org.herokuapp.com",
+    "virtualfarmingcommunity.com",
+    "farmingsimulator.org",
+]
 
 
 # Application definition
