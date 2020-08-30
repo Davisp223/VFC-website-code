@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DB_URL = os.getenv("CLEARDB_DATABASE_URL")
+DB_URL = os.getenv("JAWSDB_URL")
 if DB_URL:
     import dj_database_url
     DATABASES = {"default": dj_database_url.config(default=DB_URL)}
