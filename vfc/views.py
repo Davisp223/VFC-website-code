@@ -1,8 +1,9 @@
 import logging
 from django.http import HttpResponse, HttpResponseServerError, HttpResponseRedirect
 from django.template import Context, loader
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+
+from .models import User
 from .utils import parse_request_body
 
 logging.basicConfig(level=logging.INFO)
