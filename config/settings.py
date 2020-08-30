@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DB_URL = os.getenv("JAWSDB_URL")
 if DB_URL:
-    DEBUG = False
+    DEBUG = True
     import dj_database_url
     DATABASES = {"default": dj_database_url.config(default=DB_URL)}
 else:
