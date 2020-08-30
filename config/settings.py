@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     "farm-sim-org.herokuapp.com",
     "virtualfarmingcommunity.com",
     "farmingsimulator.org",
+    "localhost",
 ]
 
 
