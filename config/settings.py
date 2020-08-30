@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import mimetypes
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,3 +143,5 @@ USE_TZ = True
 
 
 AUTH_USER_MODEL = 'vfc.User'
+
+mimetypes.add_type("text/css", ".css", True)
