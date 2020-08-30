@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'x08^_4b$n-#e@8ny%g&qu%5pm7n+r-fzrs4joi7ia96vja49ft'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = [
     "farm-sim-org.herokuapp.com",
@@ -83,9 +83,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DB_URL = os.getenv("JAWSDB_URL")
 if DB_URL:
+    DEBUG = False
     import dj_database_url
     DATABASES = {"default": dj_database_url.config(default=DB_URL)}
 else:
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', 
