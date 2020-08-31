@@ -1,0 +1,76 @@
+{% include "base.html" %}
+<body>
+
+
+  <div class="card2">
+
+    <div class="centertxt">
+      <div class="navbar">
+        <div class="topnav-centered">
+        <a href="https://discord.gg/MAReMer">Discord</a>
+        <div class="dropdown">
+          <button class="dropbtn">Banking 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Not</a>
+            <a href="#">Yet</a>
+            <a href="#">implemented</a>
+          </div>
+        </div> 
+        <div class="dropdown">
+        <button class="dropbtn">Interactions 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Not</a>
+          <a href="#">Yet</a>
+          <a href="#">implemented</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+      <button class="dropbtn">My Account 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Not</a>
+        <a href="#">Yet</a>
+        <a href="#">implemented</a>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="righttxt">
+      <h3>Welcome back {{ name }} | Web ${{ money }} | Points {{points}}</h3> 
+      <button class="logoutbtn" onclick="location.href='/'">logout</button>
+      </div>
+
+    </div>
+ 
+
+    <div class="card">
+      <div class="centertxt">
+      <h1>Welcome to the website!</h1>
+      <h3>I am still working on everything for the website.  There is no timeline for when the website will be completed. </h3>
+      <h3>If you find any bugs or have a suggestion please submit those in the Discord server under the accompanying channels</h3>
+      <h4>-Davis (Dev Member)</h4>
+      </div>
+    </div>
+
+
+  
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+  </script>
+</body>
