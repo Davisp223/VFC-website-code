@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/631560969340059678/747158403842834462/r4f099682-resize.png" />
+  <title>Virtual Farming Community - VFC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('https://cdn.discordapp.com/attachments/631560969340059678/747158403842834462/r4f099682-resize.png');
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 31.65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-radius: 10px;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.center {
+text-align: center;
+}
+
+.left {
+text-align: left;
+}
+
+.right {
+text-align: right;
+}
+
+.card {
+         background-color: lightslategrey;
+         padding: 20px;
+         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+         width: 40%;    
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 20px;
+         border-radius: 25px;
+ }
+
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 25px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  border-radius: 25px;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.flip-card-front {
+  background-color:lightslategray;
+  color: black;
+  border-radius: 25px;
+}
+
+.flip-card-back {
+  background-color: orangered;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 25px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 455px;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+</style>
+</head>
+<body>
+
+    <form method="POST" action="https://virtualfarmingcommunity.com/Signup.php">
+        <div class="card">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <label for="email"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+    
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="passwordrepeat" required>
+          
+         
+    
+          
+    
+          <div class="clearfix">
+            <button type="button" onclick="location.href='/static/index.html'" class="cancelbtn">Cancel</button> 
+            <button type="submit" name="signup-submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+</script>
+
+</body>
+</html>
