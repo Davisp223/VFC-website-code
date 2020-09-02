@@ -1,16 +1,10 @@
 {% include "base.html" %}
 <body>
 
-
-  <div class="card2">
-
+                                                                        
+  <div class="card2">                                                     
     <div class="centertxt">
-  
-      </div>
-    
-
-    <div class="centertxt">
-      <h3>Welcome back {{ name }} | Web ${{ money }} | Points {{points}}</h3> 
+      <h3>Welcome back {{ name }} | Web ${{ money }} | Points {{points}} | Married {% if marriage == 1 %} Yes {% elif marriage == 0 %} No {% endif %}</h3> 
       <button class="logoutbtn" onclick="location.href='/'">logout</button>
       </div>
 <div class="lefttxt">
@@ -35,10 +29,11 @@
           <button class="logoutbtn" onclick="openCity(event, 'London')" id="defaultOpen">Banking</button>
           <button class="logoutbtn" onclick="openCity(event, 'Paris')">Workers</button>
           <button class="logoutbtn" onclick="openCity(event, 'Tokyo')">Accounting</button>
+          <button class="logoutbtn" onclick="openCity(event, 'Life')">Life</button>
         </div>
         
         <div id="London" class="tabcontent">
-          <h3>Banking</h3>
+          <h4>Banking</h4>
           <p>Not quiet done yet<p>
             <p>Approximate time till done</p>
             <p id="banking"></p>
@@ -46,21 +41,49 @@
         </div>
         
         <div id="Paris" class="tabcontent">
-          <h3>Workers / Contracts</h3>
+          <h4>Workers / Contracts</h4>
           <p>Not quiet done yet<p>
             <p>Approximate time till done</p>
             <p id="workers"></p>
         </div>
         
         <div id="Tokyo" class="tabcontent">
-          <h3>Accounting</h3>
+          <h4>Accounting</h4>
           <p>Not quiet done yet<p>
             <p>Approximate time till done</p>
             <p id="accounting"></p>
         </div>
+        <div id="Life" class="tabcontent">
+          <h4>Life</h4>
+        <div class="lefttxt">
+          <p>Do you want to get married?  Well your in luck we have made it super simple to get married.</p>
+          <p>Just click one of the <b>Marry</b> button in there profile</p>
+
+            
+
+          <div class="card4">
+            <img src="{{pic_boy}}" alt="John" style="width:100%">
+            <h1>{{name_boy}}</h1>
+            <p class="title">{{job_generator_boy}}</p>
+            <p>{{bio_generator_boy}}</p>
+            <div style="margin: 24px 0;"></div>
+            <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
+          </div></div>
+          
+          <div class="card4">
+            <img src="https://cdn.discordapp.com/attachments/617827601729191966/750482285421133884/unknown.png" alt="John" style="width:100%">
+            <h1>{{name_girl}}</h1>
+            <p class="title">{{job_generator_girl}}</p>
+            <p>{{bio_generator_girl}}</p>
+            <div style="margin: 24px 0;"></div>
+            <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
+          </div></div>
+ 
+
       </div>
 
   </div>
+</div>
 </div>
 
 
