@@ -8,3 +8,5 @@ class User(AbstractUser):
                                      decimal_places=2, max_digits=50)
     points = models.IntegerField(name="points", default=0)
 
+    marriage = models.IntegerField(name="marriage", default=0)
+
