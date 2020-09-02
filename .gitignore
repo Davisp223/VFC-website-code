@@ -1,3 +1,5 @@
 env/*pip
-__pycache__/**
+**/*/__pycache__
 *.pyc
+env/**/**
+env
