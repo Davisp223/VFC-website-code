@@ -58,7 +58,7 @@
         <class class="lefttxt">
           <p>Do you want to get married?  Well your in luck we have made it super simple to get married.</p>
           <p>Just click one of the <b>Marry</b> button in there profile</p>
-          <button id="update" onclick="refresh()" class="logoutbtn">Refresh</button> 
+          <button onclick="refresh()" class="logoutbtn">Refresh</button> 
 
             
 
@@ -68,7 +68,7 @@
             <p class="title">{{ job_boy }}</p>
             <p>{{bio_boy}}</p>
             <div style="margin: 24px 0;"></div>
-            <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
+            <p><button id="update" onclick="update_marriage()" class="logoutbtn">Marry</button></p>
           </div>
           
           <div class="card4">
@@ -77,7 +77,7 @@
             <p class="title">{{job_girl}}</p>
             <p>{{bio_girl}}</p>
             <div style="margin: 24px 0;"></div>
-            <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
+            <p><button onclick="update_marriage()" class="logoutbtn">Marry</button></p>
           </div>
 
           <div class="card4">
@@ -114,6 +114,8 @@ function refresh() {
   location.reload()
 
 }
+
+
 
 
 

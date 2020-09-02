@@ -454,11 +454,13 @@ body {
   cursor: pointer;
 }
   
-
-/* Style the tab */
-
-
-/* Style the buttons inside the tab */
-
-
- 
+.mybtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  width: 24.5%;
+}

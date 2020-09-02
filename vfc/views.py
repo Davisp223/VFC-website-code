@@ -7,6 +7,8 @@ import random
 from random import randint
 from .models import User
 from .utils import parse_request_body
+from django.db.models import F
+from django.http import JsonResponse
 
 
 logging.basicConfig(level=logging.INFO)
@@ -161,7 +163,7 @@ jobs_female = (
             "Medical and Health Services Managers",
             "Information Technology Project Managers",
             )
-job_girl = random.choice(jobs_female)
+job_girl = random.choice(jobs_female)       
 
 
 
@@ -170,7 +172,7 @@ def main(request):
     LOG.info(data)
     user = authenticate(username=data['username'], 
                         password=data['password'])
-    
+
     if user is not None:
         template = loader.get_template("main.html")
         return HttpResponse(template.render({"name": user.username, "money": user.webaccount, "points": user.points, "marriage": user.marriage, "name_boy": name_boy, "pic_boy": pic_boy, "bio_boy": bio_boy, "job_boy": job_boy, "name_girl": name_girl, "pic_girl": pic_girl, "bio_girl": bio_girl, "job_girl": job_girl}))
