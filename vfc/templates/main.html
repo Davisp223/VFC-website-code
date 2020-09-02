@@ -58,24 +58,24 @@
         <class class="lefttxt">
           <p>Do you want to get married?  Well your in luck we have made it super simple to get married.</p>
           <p>Just click one of the <b>Marry</b> button in there profile</p>
-          <i>Refresh for a new selection</i>
+          <button id="update" onclick="refresh()" class="logoutbtn">Refresh</button> 
 
             
 
           <div class="card4">
-            <img src="{{pic_boy}}" alt="John" >
+            <img src="{{pic_boy}}" alt="Boy" >
             <h1>{{name_boy}}</h1>
-            <p class="title">{{job_generator_boy}}</p>
-            <p>{{bio_generator_boy}}</p>
+            <p class="title">{{ job_boy }}</p>
+            <p>{{bio_boy}}</p>
             <div style="margin: 24px 0;"></div>
             <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
           </div>
           
           <div class="card4">
-            <img src="https://cdn.discordapp.com/attachments/617827601729191966/750482285421133884/unknown.png" alt="John" >
+            <img src="{{pic_girl}}" alt="Girl" >
             <h1>{{name_girl}}</h1>
-            <p class="title">{{job_generator_girl}}</p>
-            <p>{{bio_generator_girl}}</p>
+            <p class="title">{{job_girl}}</p>
+            <p>{{bio_girl}}</p>
             <div style="margin: 24px 0;"></div>
             <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
           </div></div>
@@ -104,6 +104,15 @@
 
   
   <script>
+function refresh() {
+  
+  console.clear();
+  location.reload()
+
+}
+
+
+
     function myFunction() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {
