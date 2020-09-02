@@ -32,18 +32,7 @@ def logout(request):
     # Impliment actual logout
     return HttpResponseRedirect("/")
 
-
-    
-
-
-def main(request):
-    data = parse_request_body(request.body.decode('UTF-8'))
-    LOG.info(data)
-    user = authenticate(username=data['username'], 
-                        password=data['password'])
-    
-    if user is not None:
-        name_male = (
+name_male = (
             "James",
             "John", 
             "Robert", 
@@ -66,32 +55,42 @@ def main(request):
             "Kenneth",
             "Davis"
             )
-        name_boy = random.choice(name_male)
+name_boy = random.choice(name_male)
 
-        pic_male = (
+pic_male = (
             "https://cdn.discordapp.com/attachments/617827601729191966/750482071553835148/unknown.png",
             "https://cdn.discordapp.com/attachments/617827601729191966/750482133222686780/unknown.png",
             "https://cdn.discordapp.com/attachments/617827601729191966/750482198657761403/unknown.png",
             "https://cdn.discordapp.com/attachments/617827601729191966/750482234712129636/unknown.png",
             
             )
-        pic_boy = random.choice(pic_male)
-        bio_male = (
+pic_boy = random.choice(pic_male)
+bio_male = (
             "",
             "",
             "",
             "",
             
             )
-        bio_boy = random.choice(bio_male)
-        job_male = (
+bio_boy = random.choice(bio_male)
+job_male = (
             "",
             "",
             "",
             "",
             
             )
-        job_boy = random.choice(job_male)
+job_boy = random.choice(job_male)
+
+
+
+def main(request):
+    data = parse_request_body(request.body.decode('UTF-8'))
+    LOG.info(data)
+    user = authenticate(username=data['username'], 
+                        password=data['password'])
+    
+    if user is not None:
         template = loader.get_template("main.html")
         return HttpResponse(template.render({"name": user.username, "money": user.webaccount, "points": user.points, "marriage": user.marriage, "name_boy": name_boy, "pic_boy": pic_boy, "bio_boy": bio_boy, "job_boy": job_boy}))
 
