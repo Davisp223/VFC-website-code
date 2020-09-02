@@ -312,7 +312,13 @@ body {
   /* Set a style for all buttons */
   
   
+<<<<<<< HEAD
  
+=======
+  button:hover {
+    opacity:1;
+  }
+>>>>>>> ce6f467c5e6c843dc4b85e0a3d3da0d628190b4f
   
   /* Extra styles for the cancel button */
   .cancelbtn {
@@ -453,6 +459,7 @@ body {
 }
   
 
+<<<<<<< HEAD
 .card4 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -473,6 +480,12 @@ a {
   font-size: 22px;
   color: black;
 }
+=======
+/* Style the tab */
+
+
+/* Style the buttons inside the tab */
+>>>>>>> ce6f467c5e6c843dc4b85e0a3d3da0d628190b4f
 
 
  
