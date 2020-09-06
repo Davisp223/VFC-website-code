@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% include "base.html" %}
 <body>
 
@@ -69,7 +68,7 @@
             <p class="title">{{ job_boy }}</p>
             <p>{{bio_boy}}</p>
             <div style="margin: 24px 0;"></div>
-            <p><button id="update" onclick="update_marriage()" class="logoutbtn">Marry</button></p>
+            <p><button id="marriage_updater" class="logoutbtn">Marry</button></p>
           </div>
           
           <div class="card4">
@@ -78,7 +77,7 @@
             <p class="title">{{job_girl}}</p>
             <p>{{bio_girl}}</p>
             <div style="margin: 24px 0;"></div>
-            <p><button onclick="update_marriage()" class="logoutbtn">Marry</button></p>
+            <p><button onclick="marriage_updater" class="logoutbtn">Marry</button></p>
           </div>
 
           <div class="card4">
@@ -106,8 +105,24 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script>
+function marriage_updater() {
+   $.ajax({
+    url : '/marriage_updater',
+    type : "POST",
+    data: {
+               'user': '{{request.user.id}}',
 
-  
+               },
+    dataType: "json",
+    success : function(response) {
+      alert('You are married')
+    }
+});
+}
+
+  </script>
   <script>
 function refresh() {
   
@@ -115,6 +130,9 @@ function refresh() {
   location.reload()
 
 }
+
+
+
 
 
 
@@ -177,400 +195,4 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 
-
-
-
-
-
-
-
-
-
-
-//Banking Count Down//
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 20, 2020 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("banking").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("banking").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-
-
-//Banking Count Down//
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 30, 2020 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("workers").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("workers").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-
-
-
-
-//Banking Count Down//
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 21, 2020 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("accounting").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("accounting").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
   </script>
-=======
-{% include "base.html" %}
-<body>
-
-                                                                        
-  <div class="card2">                                                     
-    <div class="centertxt">
-      <h3>Welcome back {{ name }} | Web ${{ money }} | Points {{points}} | Married {% if marriage == 1 %} Yes {% elif marriage == 0 %} No {% endif %}</h3> 
-      <button class="logoutbtn" onclick="location.href='/'">logout</button>
-      </div>
-<div class="lefttxt">
-  <button id="myBtn" class="logoutbtn">Your Account / Farm</button>
-</div>
-    </div>
- 
- 
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="centertxt">
-    <h1>Your Account / Farm</h1>
-        </div>
-        <div class="centertxt">
-        <div class="tab">
-          <button class="logoutbtn" onclick="openCity(event, 'London')" id="defaultOpen">Banking</button>
-          <button class="logoutbtn" onclick="openCity(event, 'Paris')">Workers</button>
-          <button class="logoutbtn" onclick="openCity(event, 'Tokyo')">Accounting</button>
-          <button class="logoutbtn" onclick="openCity(event, 'Life')">Life</button>
-        </div>
-        
-        <div id="London" class="tabcontent">
-          <h4>Banking</h4>
-          <p>Not quiet done yet<p>
-            <p>Approximate time till done</p>
-            <p id="banking"></p>
-
-        </div>
-        
-        <div id="Paris" class="tabcontent">
-          <h4>Workers / Contracts</h4>
-          <p>Not quiet done yet<p>
-            <p>Approximate time till done</p>
-            <p id="workers"></p>
-        </div>
-        
-        <div id="Tokyo" class="tabcontent">
-          <h4>Accounting</h4>
-          <p>Not quiet done yet<p>
-            <p>Approximate time till done</p>
-            <p id="accounting"></p>
-        </div>
-        <div id="Life" class="tabcontent">
-          <h4>Life</h4>
-        <class class="lefttxt">
-          <p>Do you want to get married?  Well your in luck we have made it super simple to get married.</p>
-          <p>Just click one of the <b>Marry</b> button in there profile</p>
-          <button id="update" onclick="refresh()" class="logoutbtn">Refresh</button> 
-
-            
-
-          <div class="card4">
-            <img src="{{pic_boy}}" alt="Boy" >
-            <h1>{{name_boy}}</h1>
-            <p class="title">{{ job_boy }}</p>
-            <p>{{bio_boy}}</p>
-            <div style="margin: 24px 0;"></div>
-            <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
-          </div>
-          
-          <div class="card4">
-            <img src="{{pic_girl}}" alt="Girl" >
-            <h1>{{name_girl}}</h1>
-            <p class="title">{{job_girl}}</p>
-            <p>{{bio_girl}}</p>
-            <div style="margin: 24px 0;"></div>
-            <p><button type="submit" value="+10 pkt" name="mybtn" class="logoutbtn">Marry</button></p>
-          </div>
-
-          <div class="card4">
-            <img src="https://www.publicdomainpictures.net/pictures/30000/velka/plain-white-background.jpg" alt="spacer" width="10%">
-          </div></div>
- 
-
-      </div>
-
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-    <div class="card">
-      <div class="centertxt">
-      <h1>Welcome to the website!</h1>
-      <h3>I am still working on everything for the website.  There is no timeline for when the website will be completed. </h3>
-      <h3>If you find any bugs or have a suggestion please submit those in the Discord server under the accompanying channels</h3>
-      <h4>-Davis (Dev Member)</h4>
-      </div>
-    </div>
-
-
-  
-  <script>
-function refresh() {
-  
-  console.clear();
-  location.reload()
-
-}
-
-
-
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-
-
-
-
-
-
-
-
-
-
-//Banking Count Down//
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 20, 2020 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("banking").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("banking").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-
-
-//Banking Count Down//
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 30, 2020 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("workers").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("workers").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-
-
-
-
-//Banking Count Down//
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 21, 2020 15:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("accounting").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("accounting").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-  </script>
->>>>>>> 942774b30e10579aa77f6d468c0503e341dd9ba3
-</body>

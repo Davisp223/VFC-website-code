@@ -11,4 +11,6 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
     path('complete_signup', views.complete_signup, name='complete_signup'),
+    path('marriage_updater', views.marriage_updater, name='marriage_updater'),
+    #path('points_updater', views.points_updater, name='points_updater'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
